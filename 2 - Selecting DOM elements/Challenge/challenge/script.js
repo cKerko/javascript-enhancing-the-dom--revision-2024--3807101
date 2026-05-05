@@ -19,4 +19,4 @@ tagSelect.forEach(tagItem => console.log(tagItem));
 // TODO: Select all elements that are <span> with class 'highlight' and print each one
 console.log("Challenge 4");
 let comboSelect = document.querySelectorAll('span.highlight');
-comboSelect.forEach(comboItem => console.log(comboSelect));
+comboSelect.forEach(comboItem => console.log(comboItem));

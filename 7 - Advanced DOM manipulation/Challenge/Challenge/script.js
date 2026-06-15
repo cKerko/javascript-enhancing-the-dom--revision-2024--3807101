@@ -13,12 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // - Validate the email format.
         // - Check the password length and complexity.
         // - Display messages or indicators for each input's validation.
-
-        // Example Validation:
-        // if (nameInput.value.trim() === '') {
-        //     formFeedback.textContent = 'Name cannot be empty';
-        //     // Add more validation checks
-        // }
+        if(nameInput.value.trim() === '') {
+            formFeedback.textContent = "Please enter your name.";
+            formFeedback.style.color = 'red';
+            return
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if(!emailRegex.test(emailInput.value.trim())) {
+            formFeedback.textContent = "Invalid email format";
+            formFeedback.style.color = 'red';
+            return
+        }
+        if(passwordInput.value.length < 8) {
+            formFeedback.textContent = "Password should be at least 8 characters long.";
+            formFeedback.style.color = 'red';
+            return
+        }
+        formFeedback.textContent = "Success";
+        formFeedback.style.color = 'green';
+        
 
     });
 });
